@@ -1,6 +1,7 @@
 # **Sistema IoT para Detección de Incendios en los Cerros Orientales de Bogotá**
 
 ## **1. Resumen General**
+
 ### **Motivación y Justificación**
 Los cerros orientales de Bogotá son una zona ecológica de gran importancia, pero altamente susceptible a incendios forestales debido a la sequía y actividad humana. La detección temprana de incendios es clave para minimizar daños ambientales y proteger comunidades cercanas. Para ello, se requiere un sistema de monitoreo en tiempo real que permita detectar cambios bruscos en temperatura, presencia de humo y emisión de gases característicos de la combustión.
 
@@ -14,6 +15,7 @@ Los cerros orientales de Bogotá son una zona ecológica de gran importancia, pe
 ---
 
 ## **2. Solución Propuesta**
+
 ### **Restricciones de Diseño**
 - **Técnicas**: Uso de ESP32 como sistema embebido, sensores DS18B20 (temperatura), MQ-2 (humo y gases) y módulo WiFi integrado.
 - **Económicas**: Uso de hardware asequible y componentes de bajo consumo energético.
@@ -22,6 +24,7 @@ Los cerros orientales de Bogotá son una zona ecológica de gran importancia, pe
 - **Temporales**: Recolección de datos en intervalos de 1 segundo para garantizar una respuesta rápida ante incendios.
 
 ### **Arquitectura Propuesta**
+
 #### **Diagrama de Bloques (Hardware y Software)**
 - **Sensores**: DS18B20 (temperatura), MQ-2 (humo/gases)
 - **Microcontrolador**: ESP32
@@ -30,6 +33,7 @@ Los cerros orientales de Bogotá son una zona ecológica de gran importancia, pe
 - **Alertas**: Notificaciones visuales y sonoras in situ
 
 ### **Desarrollo Teórico Modular**
+
 #### **Diagramas UML**
 1. **Diagrama de Caso de Uso**: Describe la interacción entre los usuarios y el sistema.
 2. **Diagrama de Clases**: Representación de la estructura del software.
@@ -48,6 +52,7 @@ Los cerros orientales de Bogotá son una zona ecológica de gran importancia, pe
 ---
 
 ## **3. Configuración Experimental y Resultados**
+
 ### **Metodología de Pruebas**
 1. **Prueba de Sensores**: Validación de datos de temperatura y detección de humo/gases en distintos entornos.
 2. **Prueba del Servidor Web**: Accesibilidad desde diferentes dispositivos.
@@ -68,7 +73,19 @@ Los cerros orientales de Bogotá son una zona ecológica de gran importancia, pe
 
 ---
 
-## **5. Conclusiones y Trabajo Futuro**
+## **5. Explicación del Código**
+
+### **Estructura del Código**
+- **Bibliotecas utilizadas**: WiFi, WebServer, DallasTemperature, LiquidCrystal_I2C.
+- **Variables y configuraciones**: Definición de pines, umbrales de detección.
+- **Función de lectura de sensores**: Toma de datos y almacenamiento en buffer.
+- **Servidor web embebido**: Página HTML y API REST para monitoreo remoto.
+- **Manejo de alertas**: Activación de zumbador y LED RGB según condiciones detectadas.
+
+---
+
+## **6. Conclusiones y Trabajo Futuro**
+
 ### **Retos Presentados**
 - Variabilidad en la lectura de sensores debido a interferencias ambientales.
 - Optimización del servidor web para minimizar latencia.
@@ -81,9 +98,21 @@ Los cerros orientales de Bogotá son una zona ecológica de gran importancia, pe
 
 ---
 
-## **6. Anexos**
+## **7. Seguridad y Fiabilidad**
+- **Protección contra errores**: Validación de datos anómalos.
+- **Redundancia de sensores**: Múltiples sensores para mejorar confiabilidad.
+- **Seguridad de conexión**: Uso de autenticación en la red WiFi.
+
+---
+
+## **8. Anexos**
 - **Código fuente documentado**
 - **Esquemáticos y diagramas**
 - **Material complementario**
+
+---
+
+## **9. Video Demostrativo**
+Se incluirá un video de máximo 5 minutos explicando la validación del prototipo funcional.
 
 
