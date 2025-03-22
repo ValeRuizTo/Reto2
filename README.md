@@ -86,8 +86,4 @@ Los cerros orientales de Bogotá son una zona ecológica de gran importancia, pe
 - **Esquemáticos y diagramas**
 - **Material complementario**
 
----
-
-## **7. Video Demostrativo**
-Se incluirá un video de máximo 5 minutos explicando la validación del prototipo funcional.
 
