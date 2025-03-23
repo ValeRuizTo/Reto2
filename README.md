@@ -869,41 +869,41 @@ El desarrollo del sistema IoT para la detección temprana de incendios en los ce
 ### Implementacion Fisica
 ![.](imagenesWiki/ledverde.jpg)
 
-En la imagen se puede observar el cableado físico del proyecto, incluyendo la protoboard y el Arduino. También se aprecia la conexión de los sensores, mostrando cómo están integrados en el sistema.
+En esta imagen se aprecia un LED iluminado en color verde, indicando que los parámetros monitoreados (por ejemplo, temperatura y nivel de gas) permanecen dentro de los rangos seguros. Como consecuencia, la alarma no se activa y el sistema se mantiene en un estado de operación normal, sin riesgos aparentes.
 
 ![.](imagenesWiki/ledrojo.jpg)
 
-En esta imagen se puede observar que tanto el nivel de gas como la temperatura han superado los límites establecidos. Como consecuencia, el LED indicador se ilumina en rojo y la alarma se activa, alertando sobre una posible situación de riesgo.
+En esta imagen se observa que el LED adquiere un tono ámbar o naranja, lo cual indica un estado de precaución. Los valores de los sensores podrían estar acercándose a los umbrales de seguridad, pero aún no se ha activado una alerta crítica. Se recomienda monitorear de cerca las lecturas para prevenir un posible riesgo.
 
 ![.](imagenesWiki/ledamarillo.jpg)
 
-En esta imagen se puede observar que tanto el nivel de gas como el de temperatura se encuentran dentro de los límites seguros, es decir, por debajo del umbral de 400 y de 30°C. Como resultado, la alarma no se activa y el LED indicador permanece en color verde, señalando un estado normal y sin riesgos
+En esta imagen se observa cómo, al acercar el encendedor al sensor de gas, el LED cambia a un tono ámbar. Esto sugiere que los valores detectados se aproximan a los umbrales de seguridad, aunque todavía no se ha activado la alerta crítica. El color ámbar sirve como señal de precaución, advirtiendo que el sistema podría escalar a un estado de riesgo si las lecturas continúan aumentando.
 
 ![.](imagenesWiki/estado.jpg)
 
-En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+En esta captura se muestra la interfaz web del sistema de monitoreo de incendios, donde se visualizan las lecturas en tiempo real: una temperatura de 23.19 °C, un nivel de gas de 420 y la ausencia de llama (“NO”). Todos estos valores están dentro de los rangos seguros, por lo que el sistema permanece en un estado normal sin activar alarmas.
 
 ![.](imagenesWiki/acciones.jpg)
 
-En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+En esta captura se aprecia la sección de "Acciones" dentro de la interfaz web, donde el usuario puede encender o apagar el zumbador, la pantalla LCD y el LED RGB, así como resetear el registro de datos. Estas opciones permiten personalizar el comportamiento del sistema en tiempo real y responder de manera más efectiva ante posibles eventos.
 
 
 ![.](imagenesWiki/log.jpg)
 
-En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+En esta captura se visualiza el registro histórico (“Log”) del sistema, mostrando los valores de temperatura, nivel de gas y la detección de llama en intervalos de tiempo específicos. Todas las lecturas permanecen dentro de los rangos seguros, con la columna “Llama” indicando “NO” en cada entrada, lo que confirma que no se han detectado situaciones de riesgo durante ese período de monitoreo.
 
 ![.](imagenesWiki/fuego.jpg)
 
-En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+En esta imagen se está realizando una prueba con un encendedor encendido para verificar la respuesta del sensor de llama. Al acercar la llama, el sensor registra la presencia de fuego, confirmando su capacidad para detectar un posible inicio de incendio.
 
 ![.](imagenesWiki/posibleIncendio1.jpg)
 
-En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+En esta captura de la interfaz web, la temperatura (30.06 °C) y el nivel de gas (1023) han superado los umbrales establecidos, aunque no se detecta llama. Debido a estos valores críticos, el sistema muestra la alerta “¡PELIGRO: POSIBLE INCENDIO!” en rojo, indicando una situación de riesgo que requiere atención inmediata.
 
 
 ![.](imagenesWiki/posible.jpg)
 
-En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+En esta imagen se aprecia la pantalla LCD mostrando el mensaje “Posible incendio” y el valor de gas en 1023. Estos indicadores sugieren que el nivel de gas ha superado los límites de seguridad, activando la alarma para alertar sobre una situación potencialmente peligrosa.
 
 
 
