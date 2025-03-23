@@ -389,32 +389,90 @@ El protocolo **IEEE 802.11** define los estándares para redes WiFi, y en este c
 - Implementación de **mecanismos de detección y corrección de fallos** en el software.  
 - Basado en principios de **tolerancia a fallos** en sistemas embebidos.  
 
+# 3. Configuración Experimental y Resultados
 
-## **3. Configuración Experimental y Resultados**
+## 3.1 Metodología de Pruebas
 
-### **Metodología de Pruebas**
-1. **Prueba de Sensores**: Validación de datos de temperatura y detección de humo/gases en distintos entornos.
-2. **Prueba del Servidor Web**: Accesibilidad desde diferentes dispositivos.
-3. **Prueba de Alertas**: Activación de alarmas ante detección de condiciones anómalas.
-4. **Simulación de Incendio**: Evaluación del tiempo de respuesta del sistema.
+- **Prueba de Sensores:**  
+  Se realizó la validación de los datos de temperatura, niveles de gas y detección de llama en distintos entornos. En el laboratorio se compararon las mediciones obtenidas por el sistema con instrumentos calibrados, mientras que en pruebas de campo se evaluó la respuesta de los sensores ante condiciones ambientales variables. Esto permitió ajustar los umbrales (por ejemplo, 30°C para temperatura y 700 unidades para gas) y confirmar la capacidad del sistema para identificar incrementos bruscos (mayor a 5°C) de manera oportuna.
 
-### **Resultados**
-- Detección de aumentos bruscos de temperatura en tiempo real.
-- Interfaz web funcional con actualización en vivo de datos.
-- Alertas activadas exitosamente en condiciones críticas.
+- **Prueba del Servidor Web:**  
+  Se verificó la accesibilidad y funcionalidad del servidor web embebido en el ESP32. La interfaz fue probada desde diferentes dispositivos (computadoras, smartphones y tablets) conectados a la WLAN proporcionada por la alcaldía. Se evaluó la actualización en tiempo real de los datos, la correcta visualización del estado de los sensores, y la respuesta a comandos para alternar el estado de actuadores (buzzer, LCD y LED RGB).
 
----
+- **Prueba de Alertas:**  
+  Se simuló la activación de condiciones anómalas generadas por sobrecalentamiento, niveles elevados de gas y detección de llama. En estas pruebas se comprobó que, al superar los umbrales establecidos, el sistema activara simultáneamente los indicadores físicos:
+  - **LED RGB:** Cambia a color rojo o amarillo según la gravedad de la situación.
+  - **Buzzer:** Emite una señal sonora de 1000 Hz para alertar inmediatamente.
+  - **Pantalla LCD:** Muestra mensajes de advertencia (“FUEGO!” o “Posible incendio!”).  
+  Estas pruebas ayudaron a ajustar la sincronización y a minimizar las falsas alarmas.
 
-## **4. Autoevaluación del Protocolo de Pruebas**
-- **Precisión**: Comparación de mediciones con instrumentos calibrados.
-- **Fiabilidad**: Pruebas repetidas en diferentes condiciones ambientales.
-- **Escalabilidad**: Capacidad de añadir más sensores sin comprometer rendimiento.
+- **Simulación de Incendio:**  
+  Se empleó una fuente controlada (por ejemplo, un encendedor) para simular la presencia de fuego y evaluar la respuesta del sistema. Se midió el tiempo transcurrido desde la detección de la señal de llama hasta la activación completa de las alertas, constatando la capacidad del sistema para reaccionar en tiempo real ante un inicio de incendio.
 
-## 5. Conclusiones y Trabajo Futuro
-### 5.1 Retos Presentados Durante el Desarrollo
+## 3.2 Resultados
 
-### 5.2 Conclusiones
-### 5.3 Trabajo Futuro
+- **Detección en Tiempo Real:**  
+  Se evidenció la capacidad del sistema para detectar aumentos bruscos de temperatura en tiempo real, identificando incrementos superiores a 5°C en un corto intervalo. Esto es fundamental para la detección temprana de posibles incendios.
+
+- **Interfaz Web Funcional:**  
+  La plataforma web demostró ser completamente operativa, mostrando en vivo el estado actual de las variables (temperatura, gas y detección de llama) y ofreciendo un historial reciente de lecturas. La actualización en tiempo real permitió a los usuarios monitorear de forma remota y precisa el estado del entorno.
+
+- **Activación de Alertas:**  
+  Las pruebas confirmaron que, en condiciones críticas, el sistema activa de forma coordinada todos los mecanismos de alerta (buzzer, LED RGB y mensajes en la pantalla LCD). Esto asegura una respuesta inmediata ante la detección de condiciones anómalas, reduciendo el riesgo de que un incendio se propague sin ser atendido.
+
+# 4. Autoevaluación del Protocolo de Pruebas
+
+- **Precisión:**  
+  Las mediciones obtenidas por los sensores fueron comparadas con instrumentos de referencia calibrados, constatando que los datos de temperatura, niveles de gas y detección de llama se encuentran dentro de márgenes de error aceptables para aplicaciones en tiempo real. Esto valida la exactitud de las lecturas y la pertinencia de los umbrales establecidos.
+
+- **Fiabilidad:**  
+  Se realizaron pruebas repetidas en diversos escenarios y condiciones ambientales (laboratorio, pruebas de campo y simulaciones controladas). La consistencia en los resultados, junto con la correcta activación de alertas ante condiciones anómalas, demostró la robustez y confiabilidad del sistema.
+
+- **Escalabilidad:**  
+  El diseño modular y el uso de FreeRTOS facilitan la integración de nuevos sensores y funcionalidades sin afectar el rendimiento general. Las pruebas evidenciaron que el sistema puede ampliarse para incorporar más variables de monitoreo, lo que lo hace adaptable a escenarios de mayor complejidad o a la integración con otros sistemas de gestión de emergencias.
+
+# 5. Conclusiones y Trabajo Futuro
+
+## 5.1 Retos Presentados Durante el Desarrollo
+
+- **Calibración de Sensores:**  
+  La integración y calibración de los distintos sensores (temperatura, gas y llama) representaron un desafío, ya que se debía asegurar la coherencia entre las mediciones y evitar falsas alarmas derivadas de variaciones ambientales naturales.
+
+- **Gestión de Tareas Concurrentes:**  
+  La implementación de FreeRTOS para el manejo de hilos requirió una cuidadosa asignación de recursos y sincronización de variables compartidas para garantizar que las tareas (lectura de sensores, actualización de la interfaz web y control de actuadores) se ejecutaran de manera eficiente y sin conflictos.
+
+- **Interfaz Web y Conectividad:**  
+  Adaptar la interfaz web para que fuera accesible y funcional desde múltiples dispositivos, así como garantizar la estabilidad de la conexión a la red WLAN, implicó superar desafíos relacionados con la comunicación y la gestión de solicitudes HTTP en tiempo real.
+
+- **Tolerancia a Fallos:**  
+  Se presentó la necesidad de implementar mecanismos de reconexión y manejo de errores para mantener la operatividad del sistema en entornos con variaciones en la conectividad o en condiciones ambientales extremas.
+
+## 5.2 Conclusiones
+
+El desarrollo del sistema IoT para la detección temprana de incendios en los cerros orientales de Bogotá ha demostrado ser una solución viable y de bajo costo para enfrentar riesgos ambientales. Se concluye que:
+
+- La integración de sensores, actuadores y una interfaz web permite una monitorización en tiempo real y una respuesta rápida ante condiciones de riesgo.
+- La arquitectura modular y el uso de FreeRTOS facilitan la escalabilidad y el mantenimiento del sistema, permitiendo futuras expansiones y mejoras.
+- Las pruebas realizadas confirman la precisión y fiabilidad del sistema, así como su capacidad para activar alertas de manera efectiva y coordinada.
+- La solución propuesta contribuye significativamente a la prevención y mitigación de incendios forestales, ofreciendo un sistema de alerta temprana que puede ser implementado en zonas vulnerables.
+
+## 5.3 Trabajo Futuro
+
+- **Incorporación de Nuevos Sensores:**  
+  Integrar sensores adicionales, como detectores de humo, humedad y velocidad del viento, para obtener una visión más completa de las condiciones ambientales y mejorar la detección temprana de incendios.
+
+- **Optimización del Algoritmo de Detección:**  
+  Refinar los algoritmos de análisis de datos para reducir las falsas alarmas y aumentar la precisión en la detección de condiciones anómalas, utilizando técnicas de procesamiento de señales y machine learning.
+
+- **Mejoras en la Comunicación:**  
+  Evaluar la posibilidad de implementar tecnologías de comunicación de largo alcance (como redes 4G/5G) para ampliar la cobertura del sistema, especialmente en zonas de difícil acceso.
+
+- **Desarrollo de Aplicaciones Móviles:**  
+  Crear una aplicación móvil complementaria a la interfaz web que permita a los usuarios recibir notificaciones en tiempo real, gestionar alertas y monitorear el estado del sistema desde cualquier lugar.
+
+- **Pruebas a Escala Real:**  
+  Realizar pruebas piloto en campo en colaboración con autoridades locales para validar el sistema en condiciones reales y ajustar parámetros en función de los resultados obtenidos, lo que permitirá adaptar y mejorar la solución para implementaciones a gran escala.
+```
 
 ## 6. Anexos
 ### Codigo comentado
