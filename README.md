@@ -27,7 +27,7 @@ Este documento se divide en las siguientes secciones:
 ## 2. Solución Propuesta
 ### 2.1 Restricciones de Diseño
 
--***Técnicas***
+***Técnicas***
 - Uso de un ESP32 como microcontrolador central. Este dispositivo, además de ser de código abierto, incorpora un microcontrolador reprogramable con conectividad Wi-Fi y Bluetooth, así como múltiples pines de entrada y salida analógicos y digitales. Esto permite la conexión eficiente con sensores y actuadores. "El ESP32 destaca por su alto rendimiento gracias a su procesador de doble núcleo. Puede llegar hasta 240 MHz, manejando tareas complejas y procesamiento en tiempo real. Esto es clave para proyectos IoT avanzados que necesitan manejar varios procesos a la vez" [1]
 - Sensor de temperatura DS18B20, "permite medir la temperatura a través de un termistor NTC, un comparador LM393, y un potenciometro"[2], esto le permite al sensor adecuar una señal de trabajo operable digital.
 - Sensor de gas (MQ-2), "Este sensor es adecuado para detectar GLP, I-butano, propano, metano, alcohol, hidrógeno y humo. Tiene alta sensibilidad y respuesta rápida"[3], ademas de esto cuenta con un potenciometrp para ajustar la sensibilidad.
@@ -89,7 +89,7 @@ Esta arquitectura permite la toma de decisiones en tiempo real, proporcionando u
 
 
 
-### **Desarrollo Teórico Modular**
+
 ### 2.3 Desarrollo Teórico Modular
 
 #### **Principios de Diseño del Sistema**
@@ -100,6 +100,7 @@ Esta arquitectura permite la toma de decisiones en tiempo real, proporcionando u
 
 
 ## **Definición de umbrales de seguridad**
+
 Para garantizar una detección confiable de incendios, se establecieron los siguientes umbrales en el sistema:
 
 - **Temperatura máxima aceptable:** `TEMP_MAX = 30°C`
@@ -109,6 +110,7 @@ Para garantizar una detección confiable de incendios, se establecieron los sigu
 Estos valores permiten detectar condiciones anómalas en el ambiente y activar una alerta en caso de peligro.
 
 ### **Justificación del umbral de temperatura**
+
 Según el planteamiento inicial del reto, la zona de interés presenta temperaturas medias anuales entre **8.4°C y 13°C**.  
 Sin embargo, se decidió establecer un umbral superior de **30°C** para la activación de alertas por las siguientes razones:
 
@@ -193,12 +195,7 @@ Si se activa una alerta por alguna de las condiciones previamente definidas, el 
 
    ![.](imagenesWiki/Diagrama2.png)
 
-
-
-TODAVIA NO
-
-
-
+TIDAVIA NO
 
 
 #### **Esquemático de Hardware**
