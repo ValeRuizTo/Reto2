@@ -195,7 +195,18 @@ El código utiliza FreeRTOS para ejecutar tareas concurrentes en el ESP32. Se cr
 
 ...
 
+...
+...
+.
 
+.
+.
+ 
+.
+.
+.
+.
+.
 
 
 
