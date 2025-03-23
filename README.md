@@ -446,6 +446,14 @@ El protocolo **IEEE 802.11** define los estándares para redes WiFi, y en este c
 
 - **Tolerancia a Fallos:**  
   Se presentó la necesidad de implementar mecanismos de reconexión y manejo de errores para mantener la operatividad del sistema en entornos con variaciones en la conectividad o en condiciones ambientales extremas.
+- **Problemas con el Sensor de Temperatura:**
+Al inicio del desarrollo, el sensor de temperatura (DS18B20) no funcionaba; por más que lo intentamos, no sensaba nada, devolviendo valores erróneos como -127°C. Unos días después, probamos con otro código de ejemplo y el sensor funcionó correctamente, lo que nos permitió confirmar que el hardware estaba operativo. Sin embargo, al volver a cargar nuestro código inicial, el sensor dejó de funcionar nuevamente. Decidimos cargar otra vez el código que sí funcionaba, pero para nuestra sorpresa, ya no operaba. Tras reiniciar el computador y realizar varias pruebas, concluimos que había un código residual en el microcontrolador que lo estaba deshabilitando, posiblemente debido a una configuración incorrecta del bus OneWire o un conflicto con otras librerías. Finalmente, resolvimos el problema limpiando la memoria del ESP32
+- **Dificultad en la obtención e instalación de librerías:** Para poder trabajar con el sensor DS18B20 y la pantalla LCD, fue necesario encontrar e instalar las librerías adecuadas. En particular, usamos las siguientes:
+  - OneWire.h: Para la comunicación con el sensor de temperatura DS18B20.
+  - DallasTemperature.h: Para procesar los datos del sensor DS18B20.
+  - Wire.h y LiquidCrystal_I2C.h: Para manejar la pantalla LCD con comunicación I2C.
+
+Encontrar las versiones correctas y lograr que funcionaran correctamente en el entorno de desarrollo tomó tiempo.
 
 ### 5.2 Conclusiones
 
@@ -855,21 +863,44 @@ El desarrollo del sistema IoT para la detección temprana de incendios en los ce
 
 
 ### Implementacion Fisica
-![.](imagenesWiki/img1.jpg)
+![.](imagenesWiki/ledverde.jpg)
 
 En la imagen se puede observar el cableado físico del proyecto, incluyendo la protoboard y el Arduino. También se aprecia la conexión de los sensores, mostrando cómo están integrados en el sistema.
 
-![.](imagenesWiki/img2.jpg)
+![.](imagenesWiki/ledrojo.jpg)
 
 En esta imagen se puede observar que tanto el nivel de gas como la temperatura han superado los límites establecidos. Como consecuencia, el LED indicador se ilumina en rojo y la alarma se activa, alertando sobre una posible situación de riesgo.
 
-![.](imagenesWiki/img7.jpg)
+![.](imagenesWiki/ledamarillo.jpg)
 
 En esta imagen se puede observar que tanto el nivel de gas como el de temperatura se encuentran dentro de los límites seguros, es decir, por debajo del umbral de 400 y de 30°C. Como resultado, la alarma no se activa y el LED indicador permanece en color verde, señalando un estado normal y sin riesgos
 
-![.](imagenesWiki/img8.jpg)
+![.](imagenesWiki/estado.jpg)
 
 En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+
+![.](imagenesWiki/acciones.jpg)
+
+En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+
+
+![.](imagenesWiki/log.jpg)
+
+En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+
+![.](imagenesWiki/fuego.jpg)
+
+En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+
+![.](imagenesWiki/posible-incendio1.jpg)
+
+En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+
+
+![.](imagenesWiki/posible incendio.jpg)
+
+En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
+
 
 
 
