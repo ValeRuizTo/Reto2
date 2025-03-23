@@ -480,9 +480,8 @@ El desarrollo del sistema IoT para la detección temprana de incendios en los ce
 
 - **Pruebas a Escala Real:**  
   Realizar pruebas piloto en campo en colaboración con autoridades locales para validar el sistema en condiciones reales y ajustar parámetros en función de los resultados obtenidos, lo que permitirá adaptar y mejorar la solución para implementaciones a gran escala.
-```
 
-## 6. Anexos
+## **6. Anexos**
 ### Codigo comentado
 
           #include <WiFi.h>              // Librería para conectar el ESP32 a una red WiFi
@@ -862,6 +861,11 @@ El desarrollo del sistema IoT para la detección temprana de incendios en los ce
           }
 
 
+
+
+
+
+
 ### Implementacion Fisica
 ![.](imagenesWiki/ledverde.jpg)
 
@@ -892,12 +896,12 @@ En la imagen se muestra la prueba del sensor de llama, donde al acercar un encen
 
 En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
 
-![.](imagenesWiki/posible-incendio1.jpg)
+![.](imagenesWiki/posibleIncendio1.jpg)
 
 En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
 
 
-![.](imagenesWiki/posible incendio.jpg)
+![.](imagenesWiki/posible.jpg)
 
 En la imagen se muestra la prueba del sensor de llama, donde al acercar un encendedor encendido, el sistema detecta la presencia de fuego. Como resultado, se activa una alarma y en la pantalla LCD aparece el mensaje "ALERTA: FUEGO"
 
