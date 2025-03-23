@@ -180,9 +180,26 @@ Si se activa una alerta por alguna de las condiciones previamente definidas, el 
 - El usuario puede visualizar en línea el estado del sistema y tomar decisiones inmediatas.
 
 
+#### **2.4 Manejo de tareas concurrentes**
 
 
-#### **Diagramas UML**
+El código utiliza FreeRTOS para ejecutar tareas concurrentes en el ESP32. Se crea una tarea separada para la lectura de sensores (leerSensores()), la cual se ejecuta en un bucle infinito con un vTaskDelay(pdMS_TO_TICKS(200)) para no sobrecargar el procesador. Mientras tanto, el servidor web sigue operando en el loop principal (loop()), permitiendo que los usuarios interactúen sin interrupciones.
+
+
+
+
+
+
+
+
+
+...
+
+
+
+
+
+#### **2.5 Diagramas UML**
 1. **Diagrama de Caso de Uso**: Describe la interacción entre los usuarios y el sistema
 ![.](imagenesWiki/uso.jpg)
 ![.](imagenesWiki/uso1.jpg)
@@ -191,7 +208,7 @@ Si se activa una alerta por alguna de las condiciones previamente definidas, el 
 
    ![.](imagenesWiki/Diagrama.png)
 
-5. **Diagrama de Secuencia**: Flujo de datos y eventos en el sistema.
+3. **Diagrama de Secuencia**: Flujo de datos y eventos en el sistema.
 
    ![.](imagenesWiki/Diagrama2.png)
 
