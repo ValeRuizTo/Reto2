@@ -186,23 +186,8 @@ Si se activa una alerta por alguna de las condiciones previamente definidas, el 
    ![.](imagenesWiki/Diagrama.png)
 
 5. **Diagrama de Secuencia**: Flujo de datos y eventos en el sistema.
-                        Usuario          SistemaIoT        SensorTemp      SensorGas       SensorLlama       LCD        Alarma
-              |                  |                  |               |                |            |           |
-              |----setup()-----> |                  |               |                |            |           |
-              |                  |----leerSensores()->|               |                |            |           |
-              |                  |<---(temp)---------|               |                |            |           |
-              |                  |----leerSensores()->|--------------|                |            |           |
-              |                  |<---(gas)-----------|              |                |            |           |
-              |                  |----leerSensores()->|-------------|                |            |           |
-              |                  |<---(fuego)----------|             |                |            |           |
-              |                  |----verificarCondiciones()-------->|                |            |           |
-              |                  |                                  |                |            |           |
-              |                  |----updateLCD()------------------------------------->|            |           |
-              |                  |----activarAlarma()------------------------------------------------>|  
-              |                  |----desactivarAlarma()--------------------------------------------->|  
-              |                  |----enviarEstado()------------------------------------------------->|  
-              |                  |----enviarLog()---------------------------------------------------->|  
 
+   ![.](imagenesWiki/Diagrama2.png)
 
 
 
