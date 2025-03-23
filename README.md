@@ -196,6 +196,7 @@ Si se activa una alerta por alguna de las condiciones previamente definidas, el 
    ![.](imagenesWiki/Diagrama2.png)
 
 TIDAVIA NO
+HILOS
 
 
 #### **Esquemático de Hardware**
