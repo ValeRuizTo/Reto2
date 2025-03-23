@@ -7,11 +7,15 @@
 El presente documento describe el desarrollo de un sistema IoT para la detección temprana de incendios en los cerros orientales de Bogotá. Se detallan las etapas de diseño, desarrollo, implementación y validación de la solución, asegurando que el prototipo sea funcional y eficiente en la identificación de riesgos de incendio mediante sensores de temperatura, gas y llama. La solución utiliza un microcontrolador ESP-32 junto con una pantalla LCD, un buzzer y un led rgb para proporcionar alertas locales, asi como un “Tablero de control” en un servidor web embebido proporcionado por el microcontrolador conectado a la WLAN ofrecida por la alcaldía, donde tambien se podra visualizar el valor actual y un histórico reciente de las variables físicas de interés, así como recibir notificaciones de cualquier eventualidad y desactivar alarmas físicas.
 
 ### 1.2 Motivación
-Los cerros orientales de Bogotá son una zona ecológica de gran importancia, pero altamente susceptible a incendios forestales debido a la sequía y actividad humana. La detección temprana de incendios es clave para minimizar daños ambientales y proteger comunidades cercanas. Para ello, se requiere un sistema de monitoreo en tiempo real que permita detectar cambios bruscos en temperatura, presencia de humo y emisión de gases característicos de la combustión.
+Los cerros orientales de Bogotá son una zona ecológica de gran importancia, pero altamente susceptible a incendios forestales debido a la sequía y actividad humana. La detección temprana de incendios es clave para minimizar daños ambientales y proteger comunidades cercanas. Para ello, se requiere un sistema de monitoreo en tiempo real que permita detectar cambios bruscos en temperatura, presencia de humo y emisión de gases característicos de la combustión. Además, es fundamental contar con una plataforma que no solo permita visualizar el historial de datos y activar alarmas físicas de manera remota, sino que también genere alertas automáticas en caso de riesgo inminente de incendio, facilitando una respuesta rápida y efectiva.
+
+
 
 ### 1.3 Justificación
 El desarrollo de este sistema surge de la necesidad de implementar una solución de bajo costo y fácil instalación para la detección temprana de incendios forestales en zonas vulnerables. Utilizando sensores especializados, el sistema detecta la presencia de gases y anomalías en la temperatura, proporcionando información en tiempo real para la toma de decisiones. Además, cuenta con alarmas in situ y envía los datos recopilados a una página web embebida, facilitando el monitoreo y la respuesta rápida ante posibles incendios.
+
 ### 1.4 Estructura de la Documentación
+
 Este documento se divide en las siguientes secciones:
 
 1. **Solución propuesta**: Restricciones, arquitectura, desarrollo teórico y estándares aplicados.
