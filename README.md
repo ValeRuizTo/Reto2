@@ -873,11 +873,11 @@ En esta imagen se aprecia un LED iluminado en color verde, indicando que los par
 
 ![.](imagenesWiki/ledrojo.jpg)
 
-En esta imagen se observa que el LED adquiere un tono ámbar o naranja, lo cual indica un estado de precaución. Los valores de los sensores podrían estar acercándose a los umbrales de seguridad, pero aún no se ha activado una alerta crítica. Se recomienda monitorear de cerca las lecturas para prevenir un posible riesgo.
+En esta imagen se observa que el LED adquiere un tono ámbar o naranja, lo cual indica un estado de alerta. Los valores de los sensores podrían estan fuera de los umbrales de seguridad, Se alerta un posible incendio.
 
 ![.](imagenesWiki/ledamarillo.jpg)
 
-En esta imagen se observa cómo, al acercar el encendedor al sensor de gas, el LED cambia a un tono ámbar. Esto sugiere que los valores detectados se aproximan a los umbrales de seguridad, aunque todavía no se ha activado la alerta crítica. El color ámbar sirve como señal de precaución, advirtiendo que el sistema podría escalar a un estado de riesgo si las lecturas continúan aumentando.
+En esta imagen se observa cómo, al acercar el encendedor al sensor de gas, el LED cambia a un tono amarillo. Esto indica que una valor en este caso el de gas a exedido el umbral de seguridad, aunque todavía no se ha activado la alerta crítica. El color amarillo sirve como señal de precaución, advirtiendo que el sistema podría escalar a un estado de riesgo si las lecturas continúan aumentando.
 
 ![.](imagenesWiki/estado.jpg)
 
