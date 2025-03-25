@@ -1,4 +1,4 @@
-# **Sistema IoT para Detección de Incendios en los Cerros Orientales de Bogotá**
+# **Sistema IoT para Detección de Incendios en los Cerros Orientales de Bogotá con un tablero de control**
 
 ## Miembros: Samuel Rodriguez, Valentina Ruiz Torres y Darek Aljuri Martínez
 
