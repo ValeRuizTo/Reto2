@@ -906,6 +906,10 @@ En esta captura de la interfaz web, la temperatura (30.06 °C) y el nivel de gas
 En esta imagen se aprecia la pantalla LCD mostrando el mensaje “Posible incendio” y el valor de gas en 1023. Estos indicadores sugieren que el nivel de gas ha superado los límites de seguridad, activando la alarma para alertar sobre una situación potencialmente peligrosa.
 
 
+![.](imagenesWiki/maqueta.jpg)
+
+En esta imagen se aprecia la maqueta del sistema, dentro de la caja del medio estan los circutios guardados
+
 
 
 ## **7. Referencias**
